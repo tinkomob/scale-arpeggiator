@@ -43,3 +43,4 @@ jobs:
             tag='v1.0.0'
           fi
           gh release create "$tag" device.zip device.zip.sha256 --title "Scale Arpeggiator $tag" --generate-notes
+
