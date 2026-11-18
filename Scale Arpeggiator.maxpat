@@ -77,7 +77,7 @@
                     ],
                     "text": "js scale_arp.js",
                     "numinlets": 2,
-                    "numoutlets": 2
+                    "numoutlets": 3
                 }
             },
             {
@@ -138,10 +138,10 @@
                     "id": "rate",
                     "maxclass": "live.dial",
                     "patching_rect": [
-                        6.0,
-                        21.0,
-                        64.0,
-                        41.0
+                        6,
+                        21,
+                        64,
+                        29
                     ],
                     "parameter_enable": 1,
                     "varname": "rate",
@@ -152,15 +152,16 @@
                             "parameter_type": 2,
                             "parameter_initial_enable": 1,
                             "parameter_initial": [
-                                1
+                                0
                             ],
                             "parameter_enum": [
+                                "Grid",
                                 "1/8",
                                 "1/16",
                                 "1/32",
                                 "1/8 triplet"
                             ],
-                            "parameter_mmax": 3
+                            "parameter_mmax": 4
                         }
                     },
                     "annotation": "Step",
@@ -178,10 +179,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        6.0,
-                        21.0,
-                        64.0,
-                        41.0
+                        6,
+                        21,
+                        64,
+                        29
                     ],
                     "showname": 0,
                     "shownumber": 1
@@ -252,9 +253,14 @@
                                 "Rise",
                                 "Fall",
                                 "Bounce",
-                                "Wander"
+                                "Wander",
+                                "Walk",
+                                "Reverse",
+                                "Zigzag",
+                                "Random",
+                                "Q&A"
                             ],
-                            "parameter_mmax": 3
+                            "parameter_mmax": 8
                         }
                     },
                     "annotation": "Motion",
@@ -297,10 +303,10 @@
                     "id": "octaveslabel",
                     "maxclass": "comment",
                     "patching_rect": [
-                        6.0,
-                        60.0,
-                        64.0,
-                        17.0
+                        6,
+                        114,
+                        64,
+                        14
                     ],
                     "text": "Octaves",
                     "fontsize": 9.0,
@@ -312,10 +318,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        6.0,
-                        60.0,
-                        64.0,
-                        17.0
+                        6,
+                        114,
+                        64,
+                        14
                     ]
                 }
             },
@@ -324,10 +330,10 @@
                     "id": "octaves",
                     "maxclass": "live.numbox",
                     "patching_rect": [
-                        6.0,
-                        79.0,
-                        64.0,
-                        20.0
+                        6,
+                        130,
+                        64,
+                        13
                     ],
                     "parameter_enable": 1,
                     "varname": "octaves",
@@ -359,10 +365,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        6.0,
-                        79.0,
-                        64.0,
-                        20.0
+                        6,
+                        130,
+                        64,
+                        13
                     ]
                 }
             },
@@ -384,10 +390,10 @@
                     "id": "registerlabel",
                     "maxclass": "comment",
                     "patching_rect": [
-                        78.0,
-                        60.0,
-                        68.0,
-                        17.0
+                        78,
+                        80,
+                        68,
+                        14
                     ],
                     "text": "Base octave",
                     "fontsize": 9.0,
@@ -399,10 +405,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        78.0,
-                        60.0,
-                        68.0,
-                        17.0
+                        78,
+                        80,
+                        68,
+                        14
                     ]
                 }
             },
@@ -411,10 +417,10 @@
                     "id": "register",
                     "maxclass": "live.numbox",
                     "patching_rect": [
-                        78.0,
-                        79.0,
-                        68.0,
-                        20.0
+                        78,
+                        96,
+                        68,
+                        13
                     ],
                     "parameter_enable": 1,
                     "varname": "register",
@@ -446,10 +452,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        78.0,
-                        79.0,
-                        68.0,
-                        20.0
+                        78,
+                        96,
+                        68,
+                        13
                     ]
                 }
             },
@@ -468,100 +474,13 @@
             },
             {
                 "box": {
-                    "id": "variationlabel",
-                    "maxclass": "comment",
-                    "patching_rect": [
-                        6.0,
-                        104.0,
-                        68.0,
-                        17.0
-                    ],
-                    "text": "Variation %",
-                    "fontsize": 9.0,
-                    "textcolor": [
-                        0.75,
-                        0.8,
-                        0.88,
-                        1.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        6.0,
-                        104.0,
-                        68.0,
-                        17.0
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "id": "variation",
-                    "maxclass": "live.numbox",
-                    "patching_rect": [
-                        6.0,
-                        123.0,
-                        64.0,
-                        20.0
-                    ],
-                    "parameter_enable": 1,
-                    "varname": "variation",
-                    "saved_attribute_attributes": {
-                        "valueof": {
-                            "parameter_longname": "Variation %",
-                            "parameter_shortname": "Variation %",
-                            "parameter_type": 1,
-                            "parameter_initial_enable": 1,
-                            "parameter_initial": [
-                                35
-                            ],
-                            "parameter_mmin": 0,
-                            "parameter_mmax": 100
-                        }
-                    },
-                    "annotation": "Variation %",
-                    "activebgcolor": [
-                        0.23,
-                        0.27,
-                        0.39,
-                        1.0
-                    ],
-                    "activetextcolor": [
-                        0.94,
-                        0.95,
-                        1.0,
-                        1.0
-                    ],
-                    "presentation": 1,
-                    "presentation_rect": [
-                        6.0,
-                        123.0,
-                        64.0,
-                        20.0
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "id": "variationmsg",
-                    "maxclass": "newobj",
-                    "patching_rect": [
-                        400.0,
-                        175.0,
-                        120.0,
-                        22.0
-                    ],
-                    "text": "prepend variation"
-                }
-            },
-            {
-                "box": {
                     "id": "gatelabel",
                     "maxclass": "comment",
                     "patching_rect": [
-                        78.0,
-                        104.0,
-                        68.0,
-                        17.0
+                        78,
+                        114,
+                        68,
+                        14
                     ],
                     "text": "Length %",
                     "fontsize": 9.0,
@@ -573,10 +492,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        78.0,
-                        104.0,
-                        68.0,
-                        17.0
+                        78,
+                        114,
+                        68,
+                        14
                     ]
                 }
             },
@@ -585,10 +504,10 @@
                     "id": "gate",
                     "maxclass": "live.numbox",
                     "patching_rect": [
-                        78.0,
-                        123.0,
-                        68.0,
-                        20.0
+                        78,
+                        130,
+                        68,
+                        13
                     ],
                     "parameter_enable": 1,
                     "varname": "gate",
@@ -620,10 +539,10 @@
                     ],
                     "presentation": 1,
                     "presentation_rect": [
-                        78.0,
-                        123.0,
-                        68.0,
-                        20.0
+                        78,
+                        130,
+                        68,
+                        13
                     ]
                 }
             },
@@ -651,6 +570,206 @@
                         45.0,
                         22.0
                     ]
+                }
+            },
+            {
+                "box": {
+                    "id": "breathlabel",
+                    "maxclass": "comment",
+                    "patching_rect": [
+                        78,
+                        49,
+                        68,
+                        14
+                    ],
+                    "text": "Breath %",
+                    "fontsize": 9.0,
+                    "textcolor": [
+                        0.75,
+                        0.8,
+                        0.88,
+                        1.0
+                    ],
+                    "presentation": 1,
+                    "presentation_rect": [
+                        78,
+                        49,
+                        68,
+                        14
+                    ],
+                    "hidden": 1,
+                    "varname": "breathlabel"
+                }
+            },
+            {
+                "box": {
+                    "id": "breath",
+                    "maxclass": "live.numbox",
+                    "patching_rect": [
+                        78,
+                        65,
+                        68,
+                        13
+                    ],
+                    "parameter_enable": 1,
+                    "varname": "breath",
+                    "saved_attribute_attributes": {
+                        "valueof": {
+                            "parameter_longname": "Breath %",
+                            "parameter_shortname": "Breath %",
+                            "parameter_type": 1,
+                            "parameter_initial_enable": 1,
+                            "parameter_initial": [
+                                0
+                            ],
+                            "parameter_mmin": 0,
+                            "parameter_mmax": 100
+                        }
+                    },
+                    "annotation": "Breath %",
+                    "activebgcolor": [
+                        0.23,
+                        0.27,
+                        0.39,
+                        1.0
+                    ],
+                    "activetextcolor": [
+                        0.94,
+                        0.95,
+                        1.0,
+                        1.0
+                    ],
+                    "presentation": 1,
+                    "presentation_rect": [
+                        78,
+                        65,
+                        68,
+                        13
+                    ],
+                    "hidden": 1
+                }
+            },
+            {
+                "box": {
+                    "id": "breathmsg",
+                    "maxclass": "newobj",
+                    "patching_rect": [
+                        400,
+                        205,
+                        120,
+                        22
+                    ],
+                    "text": "prepend breath"
+                }
+            },
+            {
+                "box": {
+                    "id": "thispatcher",
+                    "maxclass": "newobj",
+                    "patching_rect": [
+                        550,
+                        205,
+                        80,
+                        22
+                    ],
+                    "text": "thispatcher"
+                }
+            },
+            {
+                "box": {
+                    "id": "firstnotelabel",
+                    "maxclass": "comment",
+                    "patching_rect": [
+                        6,
+                        80,
+                        64,
+                        14
+                    ],
+                    "text": "First note",
+                    "fontsize": 9.0,
+                    "textcolor": [
+                        0.75,
+                        0.8,
+                        0.88,
+                        1.0
+                    ],
+                    "presentation": 1,
+                    "presentation_rect": [
+                        6,
+                        80,
+                        64,
+                        14
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "id": "firstnote",
+                    "maxclass": "live.menu",
+                    "patching_rect": [
+                        6,
+                        96,
+                        68,
+                        16
+                    ],
+                    "parameter_enable": 1,
+                    "varname": "firstnote",
+                    "saved_attribute_attributes": {
+                        "valueof": {
+                            "parameter_longname": "First note",
+                            "parameter_shortname": "First note",
+                            "parameter_type": 2,
+                            "parameter_initial_enable": 1,
+                            "parameter_initial": [
+                                0
+                            ],
+                            "parameter_enum": [
+                                "Root",
+                                "Random",
+                                "2nd",
+                                "3rd",
+                                "4th",
+                                "5th",
+                                "6th",
+                                "7th",
+                                "8th"
+                            ],
+                            "parameter_mmax": 8
+                        }
+                    },
+                    "annotation": "First note",
+                    "activebgcolor": [
+                        0.23,
+                        0.27,
+                        0.39,
+                        1.0
+                    ],
+                    "activetextcolor": [
+                        0.94,
+                        0.95,
+                        1.0,
+                        1.0
+                    ],
+                    "presentation": 1,
+                    "presentation_rect": [
+                        6,
+                        96,
+                        68,
+                        16
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "id": "firstnotemsg",
+                    "maxclass": "newobj",
+                    "patching_rect": [
+                        400,
+                        230,
+                        120,
+                        22
+                    ],
+                    "text": "prepend firstnote"
                 }
             }
         ],
@@ -802,30 +921,6 @@
             {
                 "patchline": {
                     "source": [
-                        "variation",
-                        0
-                    ],
-                    "destination": [
-                        "variationmsg",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "variationmsg",
-                        0
-                    ],
-                    "destination": [
-                        "parameter-update",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
                         "gate",
                         0
                     ],
@@ -867,6 +962,66 @@
                     ],
                     "destination": [
                         "in",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "breath",
+                        0
+                    ],
+                    "destination": [
+                        "breathmsg",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "breathmsg",
+                        0
+                    ],
+                    "destination": [
+                        "parameter-update",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "gen",
+                        2
+                    ],
+                    "destination": [
+                        "thispatcher",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "firstnote",
+                        0
+                    ],
+                    "destination": [
+                        "firstnotemsg",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "firstnotemsg",
+                        0
+                    ],
+                    "destination": [
+                        "parameter-update",
                         0
                     ]
                 }
